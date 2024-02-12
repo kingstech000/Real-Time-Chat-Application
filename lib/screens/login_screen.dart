@@ -1,10 +1,11 @@
-// ignore_for_file: library_private_types_in_public_api, prefer_const_constructors, sized_box_for_whitespace, await_only_futures, unrelated_type_equality_checks, avoid_print, use_build_context_synchronously
+// ignore_for_file: library_private_types_in_public_api, prefer_const_constructors, sized_box_for_whitespace, await_only_futures, unrelated_type_equality_checks, avoid_print, use_build_context_synchronously, prefer_const_literals_to_create_immutables
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flashchat/screens/custom_widget.dart';
 import 'package:flutter/material.dart';
 import 'custom_textBox.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -80,12 +81,32 @@ class _LoginScreenState extends State<LoginScreen> {
                         setState(() {
                           showSpinner = false;
                         });
-                      } 
-                        setState(() {
-                          showSpinner = false;
-                        });
+                      }
+                      setState(() {
+                        showSpinner = false;
+                      });
                     }
                   } catch (e) {
+                    setState(() {
+                      showSpinner = false;
+                      Alert(
+                        context: context,
+                        type: AlertType.error,
+                        title: "Error",
+                        desc: "Invalid username or password",
+                        buttons: [
+                          DialogButton(
+                            onPressed: () => Navigator.pop(context),
+                            width: 120,
+                            child: Text(
+                              "Try again",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                          )
+                        ],
+                      ).show();
+                    });
                     print(e);
                   }
                 },
