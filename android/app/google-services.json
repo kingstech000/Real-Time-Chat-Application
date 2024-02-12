@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "848011551769",
+    "project_id": "flash-chat-edc01",
+    "storage_bucket": "flash-chat-edc01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:848011551769:android:7cf74491ec7e8583753688",
+        "android_client_info": {
+          "package_name": "com.kingstech.flashchat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoLZLK6kstIp0o5CVTgacYDZo56OVULc0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
